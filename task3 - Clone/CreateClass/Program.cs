@@ -10,54 +10,14 @@ namespace CreateClass
     {
         static void Main(string[] args)
         {
-           
-            Console.WriteLine("Give a new name!");
-            String name = Console.ReadLine();
-            Console.WriteLine("give the persons profession!");
-            String profession = Console.ReadLine();
-            Console.WriteLine("give the persons gender(male/female)!");
-            String gender = createGender();
-            int salary = getIntegerInput("please give " + name + " a salary!");
-            int roomNumber = getIntegerInput("please tel which room he/she is in!");
 
-            Person person = new Employee(name, DateTime.Today.Date, gender, salary, profession, new Room(roomNumber));
-
-            Console.WriteLine(person.toString());
-            Console.ReadLine();
-
-            String createGender()
-            {
-                while (true)
-                {
-                    String genderString = Console.ReadLine();
-                    if (genderString.ToLower() == "male" || genderString.ToLower() == "female")
-                    {
-                        return genderString;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid gender: " + genderString + "\nPlease give a valid gender!(male/female)");
-                        continue;
-                    }
-                }
-            }
-
-            int getIntegerInput(string message)
-            {
-                while (true)
-                {
-                    Console.WriteLine(message + "!\n(should be a valid number!)");
-                    string salaryInput = Console.ReadLine();
-                    try
-                    {
-                        int salaryInt = Int32.Parse(salaryInput);
-                        return salaryInt;
-                    } catch (FormatException ex)
-                    {
-                        Console.WriteLine(salaryInput + " is not a number!");
-                    }
-                }
-            }
+            Employee Kovacs = new Employee("Géza", DateTime.Now, "male", 123, "léhűtő", new Room(1));
+            Kovacs.room = new Room(111);
+            Employee Kovacs2 = (Employee)Kovacs.Clone();
+            Kovacs2.room.number = 112;
+            Console.WriteLine(Kovacs.toString());
+            Console.WriteLine(Kovacs2.toString());
+            Console.ReadKey();
         }
     }
 }

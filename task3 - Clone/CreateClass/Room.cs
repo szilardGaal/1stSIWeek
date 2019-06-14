@@ -9,7 +9,7 @@ namespace CreateClass
     class Room
     {
         private int _number;
-        public int number { protected set { _number = value; } get { return _number; } }
+        public int number { set { _number = value; } get { return _number; } }
 
         public Room(int number)
         {
