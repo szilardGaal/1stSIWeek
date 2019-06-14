@@ -8,9 +8,9 @@ namespace CreateClass
 {
     class Person
     {
-        private String name;
-        private DateTime birthDate;
-        private Gender gender;
+        protected String name { get; set; }
+        protected DateTime birthDate { get; }
+        protected Gender gender { get; }
 
         public Person(String name, DateTime birthDate, String gender)
         {
@@ -21,8 +21,8 @@ namespace CreateClass
             this.gender = genderEnum;
         }
 
-
-        public string toString()
+        
+        public virtual string toString()
         {
             string genderString = gender.ToString();
             return birthDate + " " + genderString + " " + name;
