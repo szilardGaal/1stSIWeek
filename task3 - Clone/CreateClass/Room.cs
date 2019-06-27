@@ -8,12 +8,12 @@ namespace CreateClass
 {
     class Room
     {
-        private int _number;
-        public int number { set { _number = value; } get { return _number; } }
+        private int _Number;
+        public int Number { set { _Number = value; } get { return _Number; } }
 
         public Room(int number)
         {
-            this.number = number;
+            this.Number = number;
         }
     }
 }

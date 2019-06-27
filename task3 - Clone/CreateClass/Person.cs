@@ -8,24 +8,24 @@ namespace CreateClass
 {
     class Person
     {
-        protected String name { get; set; }
-        protected DateTime birthDate { get; }
-        protected Gender gender { get; }
+        protected String Name { get; set; }
+        protected DateTime BirthDate { get; }
+        protected Gender Gender { get; }
 
         public Person(String name, DateTime birthDate, String gender)
         {
-            this.name = name;
-            this.birthDate = birthDate;
+            this.Name = name;
+            this.BirthDate = birthDate;
             Gender genderEnum;
             Enum.TryParse<Gender>(gender, out genderEnum);
-            this.gender = genderEnum;
+            this.Gender = genderEnum;
         }
 
         
-        public virtual string toString()
+        public override string ToString()
         {
-            string genderString = gender.ToString();
-            return birthDate + " " + genderString + " " + name;
+            string genderString = Gender.ToString();
+            return BirthDate + " " + genderString + " " + Name;
         }
     }
 

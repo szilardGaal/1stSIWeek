@@ -8,20 +8,20 @@ namespace CreateClass
 {
     class Employee : Person
     {
-        private int salary { get; set; }
-        private string profession { get; set; }
-        private Room room { get; set; }
+        private int Salary { get; set; }
+        private string Profession { get; set; }
+        private Room Room { get; set; }
 
         public Employee(String name, DateTime birtrhDate, String gender, int salary, string profession, Room room) : base(name, birtrhDate, gender)
         {
-            this.salary = salary;
-            this.profession = profession;
-            this.room = room;
+            this.Salary = salary;
+            this.Profession = profession;
+            this.Room = room;
         }
         
-        override public string toString()
+        override public string ToString()
         {
-            return name + " " + profession + " salary: " + salary + "\nborn in: " + birthDate + "\nCurrently in Room #" + room.number;
+            return base.ToString() + " profession:" + Profession + " salary: " + Salary + "\nCurrently in Room #" + Room.Number;
         }
     }
 }

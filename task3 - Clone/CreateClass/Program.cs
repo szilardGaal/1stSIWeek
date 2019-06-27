@@ -12,11 +12,11 @@ namespace CreateClass
         {
 
             Employee Kovacs = new Employee("Géza", DateTime.Now, "male", 123, "léhűtő", new Room(1));
-            Kovacs.room = new Room(111);
+            Kovacs.Room = new Room(111);
             Employee Kovacs2 = (Employee)Kovacs.Clone();
-            Kovacs2.room.number = 112;
-            Console.WriteLine(Kovacs.toString());
-            Console.WriteLine(Kovacs2.toString());
+            Kovacs2.Room.Number = 112;
+            Console.WriteLine(Kovacs.ToString());
+            Console.WriteLine(Kovacs2.ToString());
             Console.ReadKey();
         }
     }

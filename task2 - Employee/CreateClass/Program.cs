@@ -16,16 +16,16 @@ namespace CreateClass
             Console.WriteLine("give the persons profession!");
             String profession = Console.ReadLine();
             Console.WriteLine("give the persons gender(male/female)!");
-            String gender = createGender();
-            int salary = getIntegerInput("please give " + name + " a salary!");
-            int roomNumber = getIntegerInput("please tel which room he/she is in!");
+            String gender = CreateGender();
+            int salary = GetIntegerInput("please give " + name + " a salary!");
+            int roomNumber = GetIntegerInput("please tel which room he/she is in!");
 
             Person person = new Employee(name, DateTime.Today.Date, gender, salary, profession, new Room(roomNumber));
 
-            Console.WriteLine(person.toString());
+            Console.WriteLine(person.ToString());
             Console.ReadLine();
 
-            String createGender()
+            String CreateGender()
             {
                 while (true)
                 {
@@ -42,7 +42,7 @@ namespace CreateClass
                 }
             }
 
-            int getIntegerInput(string message)
+            int GetIntegerInput(string message)
             {
                 while (true)
                 {
@@ -52,7 +52,7 @@ namespace CreateClass
                     {
                         int salaryInt = Int32.Parse(salaryInput);
                         return salaryInt;
-                    } catch (FormatException ex)
+                    } catch (FormatException)
                     {
                         Console.WriteLine(salaryInput + " is not a number!");
                     }
